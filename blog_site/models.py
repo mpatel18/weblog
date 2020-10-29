@@ -4,8 +4,8 @@ from django.urls import reverse
 
 # Create your models here.
 class Post(models.Model):
-    title = models.CharField(max_length=255)
-    title_tag = models.CharField(max_length=255, default="Blog")
+    title = models.CharField(max_length=255, help_text="Enter a Title")
+    title_tag = models.CharField(max_length=255, help_text='Enter a Tag for your Post')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = models.TextField()
 
