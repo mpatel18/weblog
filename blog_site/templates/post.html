@@ -9,6 +9,8 @@
 <hr/>
 {{ post.body }}
 <br/><br/>
+<a href="{% url 'update_post' post.pk %}">Edit</a>
+<br/><br/>
 <a href="{% url 'home' %}">Back</a>
 
 {% endblock %}

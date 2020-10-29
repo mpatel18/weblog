@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from .models import Post
-from .forms import Form
+from .forms import Form, EditForm
 
 # Create your views here.
 
@@ -17,5 +17,10 @@ class NewPostView(CreateView):
     model = Post
     form_class = Form
     template_name = "new_post.html"
-    #fields = "__all__"
+
+class UpdatePostView(UpdateView):
+    model = Post
+    form_class = EditForm
+    template_name = 'update_post.html'
+
 
