@@ -8,7 +8,7 @@
     <li>
         <a href="{% url 'post' post.pk %}">{{ post.title }}</a> - 
         {{post.author.first_name}} {{post.author.last_name}}  
-        {% if user.is_authenticated %}
+        {% if user.is_authenticated and user.id == post.author.id %}
         -   <a href="{% url 'update_post' post.pk %}">(Edit)</a>
             <a href="{% url 'delete_post' post.pk %}">(Delete)</a>
         {% endif %}
@@ -17,7 +17,7 @@
     </li>
     {% endfor %}
 </ul>
-{% if user.is_authenticated %}
+{% if user.is_authenticated and user.id == post.author.id %}
     <a href="{% url 'new_post' %}">Create New Post</a>
     <br/>
 {% endif %}

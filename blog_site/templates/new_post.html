@@ -4,7 +4,7 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
+{% if user.is_authenticated and user.id == post.author.id %}
 <h1>Add New Post</h1>
 
 <form method="POST">
@@ -15,7 +15,7 @@
 <br/>
 <a href="{% url 'home' %}">Back</a>
 {% else %}
-<h1>Must be logged in...</h1>
+<h1>Must be logged in to author's account...</h1>
 <a href="{% url 'home'%}">Home</a>
 {% endif %}
 

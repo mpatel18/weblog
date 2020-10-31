@@ -10,7 +10,7 @@
 <small>Last Modified: {{ post.date_updated }}</small>
 <hr/>
 {{ post.body }}
-{% if user.is_authenticated %}
+{% if user.is_authenticated and user.id == post.author.id %}
     <br/><br/>
     <a href="{% url 'update_post' post.pk %}">Edit</a>
 {% endif %}

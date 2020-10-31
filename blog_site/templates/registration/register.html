@@ -6,7 +6,7 @@
 <h1>Register Here</h1>
 <form method="POST">{% csrf_token %}
     {{ form.as_p }}
-    <button>Login</button>
+    <button>Register</button>
     <p>Have an account already? Login here: <a href="{% url 'login' %}">Exisiting Account</a></p>
 </form>
 {% endblock %}
