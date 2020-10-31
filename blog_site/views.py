@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 
 from .models import Post
-from .forms import Form, EditForm
+from .forms import Form
 
 
 # Create your views here.
@@ -28,7 +28,7 @@ class NewPostView(CreateView):
 
 class UpdatePostView(UpdateView):
     model = Post
-    form_class = EditForm
+    form_class = Form
     template_name = 'update_post.html'
 
 class DeletePostView(DeleteView):
