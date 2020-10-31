@@ -10,8 +10,10 @@
 <small>Last Modified: {{ post.date_updated }}</small>
 <hr/>
 {{ post.body }}
-<br/><br/>
-<a href="{% url 'update_post' post.pk %}">Edit</a>
+{% if user.is_authenticated %}
+    <br/><br/>
+    <a href="{% url 'update_post' post.pk %}">Edit</a>
+{% endif %}
 <br/><br/>
 <a href="{% url 'home' %}">Back</a>
 
