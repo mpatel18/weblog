@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 
 from .models import Post
-from .forms import Form
+from .forms import Form, RegisterForm
 
 
 # Create your views here.
@@ -37,7 +37,7 @@ class DeletePostView(DeleteView):
     success_url = reverse_lazy('home')
 
 class UserRegistration(CreateView):
-    form_class = UserCreationForm
+    form_class = RegisterForm
     template_name = 'registration/register.html'
     success_url = reverse_lazy('login')
 
