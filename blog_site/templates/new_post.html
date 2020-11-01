@@ -5,18 +5,18 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-<h1>Add New Post</h1>
+<div style="padding: 5%;">
+    <h1>Add New Post</h1>
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button>Post</button>
-</form>
-<br/>
-<a href="{% url 'home' %}">Back</a>
-{% else %}
-<h1>Must be logged in to author's account...</h1>
-<a href="{% url 'home'%}">Home</a>
-{% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-dark">Post</button>
+    </form>
+    {% else %}
+    <h1>Must be logged in to author's account...</h1>
+    <a href="{% url 'home'%}">Home</a>
+    {% endif %}
 
+</div>
 {% endblock %}

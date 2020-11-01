@@ -4,17 +4,20 @@
 
 {% block content %}
 
-<h1>{{ post.title }}</h1>
-<small>By: {{ post.author.first_name }} {{ post.author.last_name }} - Added: {{ post.date_added }}</small>
-<br/>
-<small>Last Modified: {{ post.date_updated }}</small>
-<hr/>
-{{ post.body }}
-{% if user.is_authenticated and user.id == post.author.id %}
-    <br/><br/>
-    <a href="{% url 'update_post' post.pk %}">Edit</a>
-{% endif %}
-<br/><br/>
-<a href="{% url 'home' %}">Back</a>
+<div style="padding: 5%;">
+    <h1>{{ post.title }}</h1>
+    <small>By: {{ post.author.first_name }} {{ post.author.last_name }} - Added: {{ post.date_added }}</small>
+    <br/>
+    <small>Last Modified: {{ post.date_updated }}</small>
+    {% if user.is_authenticated and user.id == post.author.id %}
+        <br/><br/>
+        <a href="{% url 'update_post' post.pk %}" class="btn btn-dark btn-sm active" role="button" aria-pressed="true">Edit</a>
+        <a href="{% url 'delete_post' post.pk %}" class="btn btn-dark btn-sm active" role="button" aria-pressed="true">Delete</a>
+    {% endif %}
+    <hr/>
+    <div>
+        {{ post.body|linebreaks }}
+    </div>
+</div>
 
 {% endblock %}
