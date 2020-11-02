@@ -34,11 +34,11 @@
   
   Then apply the migrations:
 
-    $ python manage.py migrate
+    $ python3 manage.py migrate
   
   Now run your development server:
 
-    $ python manage.py runserver
+    $ python3 manage.py runserver
   
  
   
