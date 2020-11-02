@@ -3,13 +3,12 @@
 {% block content %}
     
 <h1 style="text-align: center; padding: 5%;">Welcome to the Blog</h1>
-    <h2 style="text-align: center;">Posts:</h2>
     {% for post in object_list %}
     <div class="jumbotron" style="text-align: center;">
         <h1 class="display-4">{{ post.title }}</h1>
         <p class="lead">
             By: {{post.author.first_name}} {{post.author.last_name}}<br/>
-            Published: {{post.date_added }}
+            Published: {{ post.date_added }}
         </p>
         <hr class="my-4">
         <p> {{ post.body|slice:":500" }}</p>
