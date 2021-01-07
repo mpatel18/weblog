@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '3g$g1gjfm(+!x!a!1u!m20kymbc+wyt+1##95_+ibl5m91l+b9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['nameless-earth-86565.herokuapp.com', '127.0.0.1', 'localhost']
 
