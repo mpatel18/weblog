@@ -2,6 +2,8 @@
   
    The goal of this project is to provide minimalistic django web blog that everyone can use, which has the basic setup you can expand on.
    
+   Demo: https://nameless-earth-86565.herokuapp.com/
+   
    ## Main Features 
    
    - A simple user authentication system
