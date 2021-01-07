@@ -16,7 +16,7 @@
   ### Virtual Enviornment
   Make sure before development to deploy a virtual enviornment
   
-  Run this command to build and enviornment: 
+  Run this command to build an enviornment: 
   
     $ python3 -m venv (enviornment name)
   
